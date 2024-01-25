@@ -1,0 +1,60 @@
+version: "3.9"
+
+x-db-env: &db-env
+  POSTGRES_DB: app_db
+  POSTGRES_USER: admin
+  POSTGRES_PASSWORD: secret
+
+x-database: &db-image
+  image: postgres:15-alpine
+  environment:
+    <<: *db-env
+  expose:
+    - 5432
+
+services:
+  web:
+    image: nginx:1.14-alpine
+    ports:
+      - 80:80
+    working_dir: /etc/nginx
+    volumes:
+      - ./backend:/backend
+      - .web/sites:/etc/nginx/conf.d
+    links:
+      - backend
+
+  backend:
+    build:
+      context: .backend/
+      dockerfile: Dockerfile
+    working_dir: /backend
+    user: docker
+    volumes:
+      - ./backend:/backend
+      - .backend/bash_history:/home/.bash_history
+    environment:
+      HISTFILE: /home/.bash_history
+    expose:
+      - 9000
+
+  database:
+    <<: *db-image
+    volumes:
+      - dbUsedByAdnanAhmadyProject:/home/pgsql/data
+    environment:
+      PGDATA: /home/pgsql/data
+      <<: *db-env
+
+  database_for_testing:
+    <<: *db-image
+    tmpfs: /var/lib/postgresql
+
+  adminer:
+    image: adminer:4.8.1
+    ports:
+      - 8080:8080
+
+volumes:
+  dbUsedByAdnanAhmadyProject:
+

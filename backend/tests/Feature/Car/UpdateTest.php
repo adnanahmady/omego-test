@@ -1,21 +1,24 @@
 <?php
 
-namespace App\Tests\Car;
+namespace App\Tests\Feature\Car;
 
 use App\Entity\Brand;
+use App\Entity\Car;
 use App\Entity\Color;
 use App\Repository\BrandRepository;
+use App\Repository\CarRepository;
 use App\Repository\ColorRepository;
 use App\Tests\ApiTestCase;
 use App\Tests\Traits\RefreshDatabaseTrait;
 
-class CreateTest extends ApiTestCase
+class UpdateTest extends ApiTestCase
 {
     use RefreshDatabaseTrait;
 
     /** @test */
-    public function user_can_create_a_car(): void
+    public function user_can_update_a_car(): void
     {
+        $car = $this->getCar();
         $brand = $this->getBrand();
         $color = $this->getColor();
         $data = [
@@ -24,15 +27,16 @@ class CreateTest extends ApiTestCase
             'color' => '/api/v1/colors/' . $color->getId(),
         ];
 
-        $response = static::createClient()->request(
-            'POST',
-            '/api/v1/cars',
+        static::createClient()->request(
+            'PUT',
+            '/api/v1/cars/' . $car->getId(),
             ['json' => $data]
         );
 
-        $this->assertResponseStatusCodeSame(201);
+        $this->assertResponseStatusCodeSame(200);
         $this->assertJsonContains([
             '@context' => '/api/contexts/Car',
+            '@id' => "/api/v1/cars/{$car->getId()}",
             '@type' => 'Car',
             'brand' => [
                 '@id' => "/api/v1/brands/{$brand->getId()}",
@@ -40,30 +44,35 @@ class CreateTest extends ApiTestCase
                 'id' => $brand->getId(),
                 'name' => $brand->getName(),
             ],
+            'id' => $car->getId(),
             'model' => 'xdd',
-            'color' =>  [
+            'color' => [
                 '@id' => "/api/v1/colors/{$color->getId()}",
                 '@type' => 'Color',
                 'id' => $color->getId(),
                 'name' => $color->getName(),
             ],
         ]);
-        $data = $response->toArray();
-        $this->assertStringContainsString('/api/v1/cars/', $data['@id']);
-        $this->assertArrayHasKey('id', $data);
     }
 
     public function getBrand(): Brand
     {
         return $this->getContainer()
             ->get(BrandRepository::class)
-            ->findOneBy([]);
+            ->findAll([])[5];
     }
 
     public function getColor(): Color
     {
         return $this->getContainer()
             ->get(ColorRepository::class)
+            ->findAll([])[3];
+    }
+
+    public function getCar(): Car
+    {
+        return $this->getContainer()
+            ->get(CarRepository::class)
             ->findOneBy([]);
     }
 }

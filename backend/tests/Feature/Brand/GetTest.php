@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Brand;
+namespace App\Tests\Feature\Brand;
 
 use App\DataFixtures\CarFixture;
 use App\DataFixtures\ColorFixture;

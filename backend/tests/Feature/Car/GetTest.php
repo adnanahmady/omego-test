@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Car;
+namespace App\Tests\Feature\Car;
 
 use App\Entity\Car;
 use App\Repository\CarRepository;

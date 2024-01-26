@@ -173,3 +173,14 @@ make coverage
 ```
 
 the test coverage result will be stored in `tests/coverageResult` path.
+
+### Database Diagram
+
+You can see the project tables of the database and relations in below.
+
+![Database diagram](.assets/omego-fleet-ir.jpg)
+
+### Postman
+
+There is a postman collection containing the implemented apis.
+you can download it using [this link.](.assets/omego-fleet-ir.postman_collection.json)

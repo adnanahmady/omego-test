@@ -1,0 +1,578 @@
+{
+	"info": {
+		"_postman_id": "890cd5db-9999-4343-b974-dfe175c839f9",
+		"name": "omego-fleet-ir",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1911426"
+	},
+	"item": [
+		{
+			"name": "cars",
+			"item": [
+				{
+					"name": "Get All Cars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/v1/cars",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cars"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Cars",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/api/v1/cars",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cars"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/ld+json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Vary",
+									"value": "Content-Type"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "deny"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 20:18:45 GMT"
+								},
+								{
+									"key": "Link",
+									"value": "<http://localhost/api/docs.jsonld>; rel=\"http://www.w3.org/ns/hydra/core#apiDocumentation\""
+								},
+								{
+									"key": "ETag",
+									"value": "\"11a03a578acd171a8bfc4ff71be83a49\""
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"@context\": \"/api/contexts/Car\",\n    \"@id\": \"/api/v1/cars\",\n    \"@type\": \"hydra:Collection\",\n    \"hydra:totalItems\": 10,\n    \"hydra:member\": [\n        {\n            \"@id\": \"/api/v1/cars/42\",\n            \"@type\": \"Car\",\n            \"id\": 42,\n            \"brand\": {\n                \"@id\": \"/api/v1/brands/38\",\n                \"@type\": \"Brand\",\n                \"id\": 38,\n                \"name\": \"Kendall Ziemann\"\n            },\n            \"model\": \"Brandi Trantow\",\n            \"color\": {\n                \"@id\": \"/api/v1/colors/38\",\n                \"@type\": \"Color\",\n                \"id\": 38,\n                \"name\": \"Mrs. Kenna Labadie\"\n            }\n        },\n        {\n            \"@id\": \"/api/v1/cars/43\",\n            \"@type\": \"Car\",\n            \"id\": 43,\n            \"brand\": {\n                \"@id\": \"/api/v1/brands/39\",\n                \"@type\": \"Brand\",\n                \"id\": 39,\n                \"name\": \"Lelah Willms I\"\n            },\n            \"model\": \"Bruce Larson IV\",\n            \"color\": {\n                \"@id\": \"/api/v1/colors/39\",\n                \"@type\": \"Color\",\n                \"id\": 39,\n                \"name\": \"Miss Aliza Rau Jr.\"\n            }\n        },\n        {\n            \"@id\": \"/api/v1/cars/44\",\n            \"@type\": \"Car\",\n            \"id\": 44,\n            \"brand\": {\n                \"@id\": \"/api/v1/brands/40\",\n                \"@type\": \"Brand\",\n                \"id\": 40,\n                \"name\": \"Marcelo Cummerata I\"\n            },\n            \"model\": \"Dr. Sigrid Rowe IV\",\n            \"color\": {\n                \"@id\": \"/api/v1/colors/40\",\n                \"@type\": \"Color\",\n                \"id\": 40,\n                \"name\": \"Gerhard Auer\"\n            }\n        },\n        {\n            \"@id\": \"/api/v1/cars/45\",\n            \"@type\": \"Car\",\n            \"id\": 45,\n            \"brand\": {\n                \"@id\": \"/api/v1/brands/41\",\n                \"@type\": \"Brand\",\n                \"id\": 41,\n                \"name\": \"Mr. Rosendo Bogisich\"\n            },\n            \"model\": \"Angelo Mohr\",\n            \"color\": {\n                \"@id\": \"/api/v1/colors/41\",\n                \"@type\": \"Color\",\n                \"id\": 41,\n                \"name\": \"Carlos Graham\"\n            }\n        },\n        {\n            \"@id\": \"/api/v1/cars/46\",\n            \"@type\": \"Car\",\n            \"id\": 46,\n            \"brand\": {\n                \"@id\": \"/api/v1/brands/42\",\n                \"@type\": \"Brand\",\n                \"id\": 42,\n                \"name\": \"Delta Jaskolski\"\n            },\n            \"model\": \"Cristina Kerluke PhD\",\n            \"color\": {\n                \"@id\": \"/api/v1/colors/42\",\n                \"@type\": \"Color\",\n                \"id\": 42,\n                \"name\": \"Samanta Kuhn\"\n            }\n        },\n        {\n            \"@id\": \"/api/v1/cars/47\",\n            \"@type\": \"Car\",\n            \"id\": 47,\n            \"brand\": {\n                \"@id\": \"/api/v1/brands/43\",\n                \"@type\": \"Brand\",\n                \"id\": 43,\n                \"name\": \"Prof. Aurore O'Reilly\"\n            },\n            \"model\": \"Vita Emard\",\n            \"color\": {\n                \"@id\": \"/api/v1/colors/43\",\n                \"@type\": \"Color\",\n                \"id\": 43,\n                \"name\": \"Timothy Rice III\"\n            }\n        },\n        {\n            \"@id\": \"/api/v1/cars/48\",\n            \"@type\": \"Car\",\n            \"id\": 48,\n            \"brand\": {\n                \"@id\": \"/api/v1/brands/44\",\n                \"@type\": \"Brand\",\n                \"id\": 44,\n                \"name\": \"Ms. Tianna Altenwerth III\"\n            },\n            \"model\": \"Flo Pollich\",\n            \"color\": {\n                \"@id\": \"/api/v1/colors/44\",\n                \"@type\": \"Color\",\n                \"id\": 44,\n                \"name\": \"Bailey Kemmer\"\n            }\n        },\n        {\n            \"@id\": \"/api/v1/cars/49\",\n            \"@type\": \"Car\",\n            \"id\": 49,\n            \"brand\": {\n                \"@id\": \"/api/v1/brands/45\",\n                \"@type\": \"Brand\",\n                \"id\": 45,\n                \"name\": \"Carmine Connelly\"\n            },\n            \"model\": \"Marjory Bayer Sr.\",\n            \"color\": {\n                \"@id\": \"/api/v1/colors/45\",\n                \"@type\": \"Color\",\n                \"id\": 45,\n                \"name\": \"Therese Douglas\"\n            }\n        },\n        {\n            \"@id\": \"/api/v1/cars/50\",\n            \"@type\": \"Car\",\n            \"id\": 50,\n            \"brand\": {\n                \"@id\": \"/api/v1/brands/46\",\n                \"@type\": \"Brand\",\n                \"id\": 46,\n                \"name\": \"Mr. Jay Prohaska I\"\n            },\n            \"model\": \"Delilah Cormier\",\n            \"color\": {\n                \"@id\": \"/api/v1/colors/46\",\n                \"@type\": \"Color\",\n                \"id\": 46,\n                \"name\": \"Caterina Kirlin\"\n            }\n        },\n        {\n            \"@id\": \"/api/v1/cars/51\",\n            \"@type\": \"Car\",\n            \"id\": 51,\n            \"brand\": {\n                \"@id\": \"/api/v1/brands/47\",\n                \"@type\": \"Brand\",\n                \"id\": 47,\n                \"name\": \"Winifred Stiedemann\"\n            },\n            \"model\": \"Brittany West\",\n            \"color\": {\n                \"@id\": \"/api/v1/colors/47\",\n                \"@type\": \"Color\",\n                \"id\": 47,\n                \"name\": \"Ms. Jada Heaney DDS\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Car",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/v1/cars/42",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								"42"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Car",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost/api/v1/cars/42",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										"42"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/ld+json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Vary",
+									"value": "Content-Type"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "deny"
+								},
+								{
+									"key": "Accept-Patch",
+									"value": "application/merge-patch+json"
+								},
+								{
+									"key": "Content-Location",
+									"value": "/api/v1/cars/42"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 20:17:34 GMT"
+								},
+								{
+									"key": "Link",
+									"value": "<http://localhost/api/docs.jsonld>; rel=\"http://www.w3.org/ns/hydra/core#apiDocumentation\""
+								},
+								{
+									"key": "ETag",
+									"value": "\"6fc602b488e4e9235ef370a1f5763d34\""
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"@context\": \"/api/contexts/Car\",\n    \"@id\": \"/api/v1/cars/42\",\n    \"@type\": \"Car\",\n    \"id\": 42,\n    \"brand\": {\n        \"@id\": \"/api/v1/brands/38\",\n        \"@type\": \"Brand\",\n        \"id\": 38,\n        \"name\": \"Kendall Ziemann\"\n    },\n    \"model\": \"Brandi Trantow\",\n    \"color\": {\n        \"@id\": \"/api/v1/colors/38\",\n        \"@type\": \"Color\",\n        \"id\": 38,\n        \"name\": \"Mrs. Kenna Labadie\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Car",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost/api/v1/cars/42",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								"42"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Car",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost/api/v1/cars/42",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										"42"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.2"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "deny"
+								},
+								{
+									"key": "Accept-Patch",
+									"value": "application/merge-patch+json"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 20:23:56 GMT"
+								},
+								{
+									"key": "Link",
+									"value": "<http://localhost/api/docs.jsonld>; rel=\"http://www.w3.org/ns/hydra/core#apiDocumentation\""
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Create Car",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brand\": \"/api/v1/brands/38\",\n    \"model\": \"bmw-360\",\n    \"color\": \"/api/v1/colors/38\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/v1/cars",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cars"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Car",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brand\": \"/api/v1/brands/38\",\n    \"model\": \"bmw-360\",\n    \"color\": \"/api/v1/colors/38\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/api/v1/cars",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cars"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/ld+json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "deny"
+								},
+								{
+									"key": "Accept-Patch",
+									"value": "application/merge-patch+json"
+								},
+								{
+									"key": "Content-Location",
+									"value": "/api/v1/cars/53"
+								},
+								{
+									"key": "Location",
+									"value": "/api/v1/cars/53"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 20:21:30 GMT"
+								},
+								{
+									"key": "Link",
+									"value": "<http://localhost/api/docs.jsonld>; rel=\"http://www.w3.org/ns/hydra/core#apiDocumentation\""
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"@context\": \"/api/contexts/Car\",\n    \"@id\": \"/api/v1/cars/53\",\n    \"@type\": \"Car\",\n    \"id\": 53,\n    \"brand\": {\n        \"@id\": \"/api/v1/brands/38\",\n        \"@type\": \"Brand\",\n        \"id\": 38,\n        \"name\": \"Kendall Ziemann\"\n    },\n    \"model\": \"bmw-360\",\n    \"color\": {\n        \"@id\": \"/api/v1/colors/38\",\n        \"@type\": \"Color\",\n        \"id\": 38,\n        \"name\": \"Mrs. Kenna Labadie\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Car",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"brand\": \"/api/v1/brands/38\",\n    \"model\": \"bmw-361\",\n    \"color\": \"/api/v1/colors/38\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/api/v1/cars/53",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								"53"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Car",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brand\": \"/api/v1/brands/38\",\n    \"model\": \"bmw-361\",\n    \"color\": \"/api/v1/colors/38\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost/api/v1/cars/53",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										"53"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/ld+json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.0"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "deny"
+								},
+								{
+									"key": "Accept-Patch",
+									"value": "application/merge-patch+json"
+								},
+								{
+									"key": "Content-Location",
+									"value": "/api/v1/cars/53"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 20:22:37 GMT"
+								},
+								{
+									"key": "Link",
+									"value": "<http://localhost/api/docs.jsonld>; rel=\"http://www.w3.org/ns/hydra/core#apiDocumentation\""
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"@context\": \"/api/contexts/Car\",\n    \"@id\": \"/api/v1/cars/53\",\n    \"@type\": \"Car\",\n    \"id\": 53,\n    \"brand\": {\n        \"@id\": \"/api/v1/brands/38\",\n        \"@type\": \"Brand\",\n        \"id\": 38,\n        \"name\": \"Kendall Ziemann\"\n    },\n    \"model\": \"bmw-361\",\n    \"color\": {\n        \"@id\": \"/api/v1/colors/38\",\n        \"@type\": \"Color\",\n        \"id\": 38,\n        \"name\": \"Mrs. Kenna Labadie\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

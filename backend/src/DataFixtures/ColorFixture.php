@@ -9,8 +9,7 @@ class ColorFixture extends BaseFixture
 {
     public function load(ObjectManager $manager): void
     {
-        $color = $this->createColor($manager);
-        $this->addReference('color', $color);
+        $this->createColor($manager);
     }
 
     public function createColor(ObjectManager $manager): Color

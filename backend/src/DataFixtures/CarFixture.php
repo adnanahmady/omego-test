@@ -5,10 +5,9 @@ namespace App\DataFixtures;
 use App\Entity\Brand;
 use App\Entity\Car;
 use App\Entity\Color;
-use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class CarFixture extends BaseFixture implements DependentFixtureInterface
+class CarFixture extends BaseFixture
 {
     public function load(ObjectManager $manager): void
     {
@@ -16,17 +15,10 @@ class CarFixture extends BaseFixture implements DependentFixtureInterface
             $brand = (new BrandFixture())->createBrand($manager);
             $color = (new ColorFixture())->createColor($manager);
             $car = $this->createCar($brand, $color, $manager);
-            $brand->addCar($car);
-            $color->addCar($car);
+            for ($j = 0; $j < 5; ++$j) {
+                (new ReviewFixture())->createReview($manager, $car);
+            }
         }
-    }
-
-    public function getDependencies(): array
-    {
-        return [
-            BrandFixture::class,
-            ColorFixture::class,
-        ];
     }
 
     public function createCar(

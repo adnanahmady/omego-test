@@ -11,10 +11,7 @@ class BrandFixture extends BaseFixture
     {
         $brand = $this->createBrand($manager);
         $color = (new ColorFixture())->createColor($manager);
-        $car = (new CarFixture())->createCar($brand, $color, $manager);
-        $brand->addCar($car);
-        $color->addCar($car);
-        $this->addReference('brand', $brand);
+        (new CarFixture())->createCar($brand, $color, $manager);
     }
 
     public function createBrand(ObjectManager $manager): Brand

@@ -15,17 +15,17 @@ class Car
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['car:read', 'brand:read'])]
+    #[Groups(['car:read', 'brand:read', 'color:read'])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(cascade: ['persist'], inversedBy: 'cars')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups(['car:read'])]
+    #[Groups(['car:read', 'color:read'])]
     #[Assert\NotBlank]
     private ?Brand $brand = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['car:read', 'brand:read'])]
+    #[Groups(['car:read', 'brand:read', 'color:read'])]
     #[Assert\NotBlank]
     private ?string $model = null;
 

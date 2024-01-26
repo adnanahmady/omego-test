@@ -9,21 +9,22 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
 
-#[ApiResource(routePrefix: 'v1')]
+#[ApiResource(routePrefix: 'v1', normalizationContext: ['groups' => 'brand:read'])]
 #[ORM\Entity(repositoryClass: BrandRepository::class)]
 class Brand
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['get:read'])]
+    #[Groups(['car:read', 'brand:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['get:read'])]
+    #[Groups(['car:read', 'brand:read'])]
     private ?string $name = null;
 
     #[ORM\OneToMany(mappedBy: 'brand', targetEntity: Car::class)]
+    #[Groups(['brand:read'])]
     private Collection $cars;
 
     public function __construct()

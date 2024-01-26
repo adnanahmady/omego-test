@@ -16,11 +16,11 @@ class Color
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['get:read'])]
+    #[Groups(['car:read'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['get:read'])]
+    #[Groups(['car:read'])]
     private ?string $name = null;
 
     #[ORM\OneToMany(mappedBy: 'color', targetEntity: Car::class)]

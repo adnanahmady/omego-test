@@ -10,6 +10,10 @@ class BrandFixture extends BaseFixture
     public function load(ObjectManager $manager): void
     {
         $brand = $this->createBrand($manager);
+        $color = (new ColorFixture())->createColor($manager);
+        $car = (new CarFixture())->createCar($brand, $color, $manager);
+        $brand->addCar($car);
+        $color->addCar($car);
         $this->addReference('brand', $brand);
     }
 

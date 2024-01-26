@@ -8,30 +8,30 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[ApiResource(routePrefix: 'v1', normalizationContext: ['groups' => ['get:read']])]
+#[ApiResource(routePrefix: 'v1', normalizationContext: ['groups' => ['car:read']])]
 #[ORM\Entity(repositoryClass: CarRepository::class)]
 class Car
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups(['get:read'])]
+    #[Groups(['car:read', 'brand:read'])]
     private ?int $id = null;
 
     #[ORM\ManyToOne(cascade: ['persist'], inversedBy: 'cars')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups(['get:read'])]
+    #[Groups(['car:read'])]
     #[Assert\NotBlank]
     private ?Brand $brand = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups(['get:read'])]
+    #[Groups(['car:read', 'brand:read'])]
     #[Assert\NotBlank]
     private ?string $model = null;
 
     #[ORM\ManyToOne(inversedBy: 'cars')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups(['get:read'])]
+    #[Groups(['car:read', 'brand:read'])]
     #[Assert\NotBlank]
     private ?Color $color = null;
 

@@ -171,3 +171,5 @@ this command.
 ```shell
 make coverage
 ```
+
+the test coverage result will be stored in `tests/coverageResult` path.

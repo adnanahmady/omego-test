@@ -16,14 +16,13 @@ RUN wget https://get.symfony.com/cli/installer -O - | bash
 ENV PATH "/home/docker/.symfony5/bin:$PATH"
 
 RUN echo 'alias sym="php bin/console"' >> $HOME/.bashrc \
-    && echo 'function make() { php artisan make:$@; }' >> $HOME/.bashrc \
+    && echo 'function make() { php bin/console make:$@; }' >> $HOME/.bashrc \
     && echo 'alias gs="git status"' >> $HOME/.bashrc \
     && echo 'alias gd="git diff"' >> $HOME/.bashrc \
     && echo 'alias g="git"' >> $HOME/.bashrc \
     && echo 'alias ga="git add"' >> $HOME/.bashrc \
     && echo 'alias gl="git log"' >> $HOME/.bashrc \
-    && echo 'alias t="composer test --"' >> $HOME/.bashrc \
-    && echo 'alias tf="composer test -- --filter"' >> $HOME/.bashrc \
-    && echo 'alias ft="composer final"' >> $HOME/.bashrc
+    && echo 't() { composer test -- $(echo $1 | sed "s/.*tests/tests/"); }' >> $HOME/.bashrc \
+    && echo 'alias tf="composer test -- --filter"' >> $HOME/.bashrc
 
 USER root

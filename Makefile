@@ -19,7 +19,7 @@ build:
 	${MAKE} up options=--build
 
 down:
-	@$(compose) down
+	@$(compose) down ${with}
 
 ps: status
 status:
